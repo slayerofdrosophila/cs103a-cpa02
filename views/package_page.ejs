@@ -1,0 +1,52 @@
+
+
+<h1>
+    Package info for <%= package.name %>
+</h1>
+
+<h3>
+    Quality score: <%= score %> / 100
+</h3>
+
+<table>
+    <thead>
+        <tr>    
+            <td>
+                Dependents
+            </td>
+            <td>
+                Package Name
+            </td>
+            <td>
+                GH Stars
+            </td>
+            <td>
+                GH Watchers
+            </td>
+            <td>
+                Abandoned
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <%= package.name %> 
+            </td>
+            <td>
+                <%= package.dependents %> 
+            </td>
+            <td>
+                <%= package.GitHubStars %> 
+            </td>
+            <td>
+                <%= package.GitHubWatchers %> 
+            </td>
+            <td>
+                <%= package.abandoned %> 
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+Charmed? <a href=" <%= package.repository %> ">Repository link</a>
