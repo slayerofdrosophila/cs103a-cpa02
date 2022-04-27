@@ -1,10 +1,11 @@
-# CS103a Express App Demo
+# Official NPM Package Rater
 
-This is a starter project which has a simple authentication module 
-and provides access to a mongoose database in the cloud.
+Are you an author of a popular package? Is it popular enough? We know the answer!     
+"We" doesn't include you... unless you're brave enough to look up your package!
 
-## Display Movie
-https://drive.google.com/file/d/1Wf-DkkgAg-fDN3yySU2ctD0Y9Tk5Ko9J/view?usp=sharing
+# Usage
+
+Search for your package of choice... or try one of our examples... or throw caution to the wind and click "random!"
 
 ## Installation
 Download the project from github and download nodejs and npm from https://nodejs.org
