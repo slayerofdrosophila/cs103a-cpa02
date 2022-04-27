@@ -12,12 +12,15 @@ You will need
 * Node.js
 * git
 
-# How to run
+Do this    
 * Open Powershell on Windows or your other, cooler terminal on Mac / WSL / Linux
 * Navigate to your desired directory
 * run `git clone https://github.com/slayerofdrosophila/cs103a-cpa02.git`
 * navigate to the new cs103a-cpa02 folder
 * run `npm install` and wait
+
+# How to run
+
 * run `npm start`
 
 # How to use
