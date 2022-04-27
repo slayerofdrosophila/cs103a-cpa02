@@ -25,6 +25,8 @@ Do this
 
 # How to use
 
+Open your web browser and go to [localhost:5000](localhost:5000)
+
 ![App homepage](/public/images/screen1.png "Title")
 
 Enter your package into the text box, or try one of the buttons!
