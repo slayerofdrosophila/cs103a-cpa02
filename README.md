@@ -8,23 +8,20 @@ Are you an author of a popular package? Is it popular enough? We know the answer
 Search for your package of choice... or try one of our examples... or throw caution to the wind and click "random!"
 
 ## Installation
-Download the project from github and download nodejs and npm from https://nodejs.org
-and cd into the folder
+You will need    
+* Node.js
+* git
 
-Install the packages with
-``` bash
-npm install
-```
-Start the project with
-``` bash
-node app.js
-```
-or install nodemon (the node monitoring app) with
-``` bash
-npm install -g nodemon
-```
-and start the project with
-``` bash
-nodemon
-```
+# How to run
+* Open Powershell on Windows or your other, cooler terminal on Mac / WSL / Linux
+* Navigate to your desired directory
+* run `git clone https://github.com/slayerofdrosophila/cs103a-cpa02.git`
+* navigate to the new cs103a-cpa02 folder
+* run `npm install` and wait
+* run `npm start`
 
+# How to use
+
+![App homepage](/public/images/screen1.png "Title")
+
+Enter your package into the text box, or try one of the buttons!
