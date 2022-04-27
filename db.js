@@ -48,7 +48,7 @@ fs.readFile('npm.csv', async function (err, data) {
         newThing.repository = lineData[1]
         newThing.GitHubStars = parseInt(lineData[2])
         newThing.GitHubWatchers = parseInt(lineData[4])
-        newThing.abandoned = lineData[5]
+        newThing.abandoned = (lineData[5] === 'true')
         newThing.codeCoveragePercent = lineData[6]
         newThing.linters = parseInt(lineData[7])
         newThing.dependents = parseInt(lineData[8])

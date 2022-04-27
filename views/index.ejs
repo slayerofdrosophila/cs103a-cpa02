@@ -1,19 +1,65 @@
 
-
+<% if (failed){ %> 
+    <div class="jumbotron">
+        <h1>Sorry, we couldn't find that package.</h1>
+    </div>
+<% } else { %> 
 <div class="jumbotron">
-    <h1>NPM Official And Scientific Package Suggester</h1>
-    <p></p>
+    <h1>NPM Official Scientific Package Checker</h1>
 </div>
+<% } %> 
 
-
-<form method="POST" action="/search">
-    What are you searching for?
-    <input type="text" id="search_box" name="query" value=""> <br>
+    <h3>
+    Rate your (popular, top 1000) package:     
+    <form method="POST" action="/search">
+        <input type="text" id="search_box" name="query" value=""> 
     <input type="submit" value="Enter">
+    </form>
+    </h3>
+
+    <div style="display: table">
+        <h5>
+            <div style="display: table-cell">
+                <form method="POST" action="/search">
+                    <input type="text" id="box2" name="query" value="mocha" hidden="true"> 
+                    <input type="submit" value="mocha">
+                </form>
+            </div>
+            <div style="display: table-cell">
+                <form method="POST" action="/search">
+                    <input type="text" id="box3" name="query" value="eslint" hidden="true"> 
+                    <input type="submit" value="eslint">
+                </form>
+            </div>
+            <div style="display: table-cell">
+                <form method="POST" action="/search">
+                    <input type="text" id="box3" name="query" value="express" hidden="true"> 
+                    <input type="submit" value="express">
+                </form>
+            </div>
+            <div style="display: table-cell">
+                <form method="POST" action="/search">
+                    <input type="text" id="box3" name="query" value="left-pad" hidden="true"> 
+                    <input type="submit" value="left-pad">
+                </form>
+            </div>
+            <div style="display: table-cell">
+                <form method="POST" action="/search">
+                    <input type="text" id="box3" name="query" value="is-number" hidden="true"> 
+                    <input type="submit" value="is-number">
+                </form>
+            </div>
+            <div style="display: table-cell">
+                <form method="POST" action="/search">
+                    <input type="text" id="box3" name="query" value="webpack" hidden="true"> 
+                    <input type="submit" value="webpack">
+                </form>
+            </div>
+        </h5> 
+    </div>
 </form>
-<hr>
-    <h4> OR </h4>
-<hr>
-<form method="POST" action="/search/lucky">
-    <input type="submit" value="I'm Feeling Astronomically Lucky">
-</form>
+    <h4>
+        <form method="GET" action="/lucky">
+            <input type="submit" value="random">
+        </form>
+    </h4>

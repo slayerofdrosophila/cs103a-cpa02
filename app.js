@@ -88,23 +88,34 @@ app.use(
 const fs = require('fs')
 
 app.get("/", async (req, res, next) => {
+  res.locals.failed = false
   res.render("index");
 });
 
-
-
-app.post("/search/lucky", async (req, res, next) => {
-  let package = await Package.find()
-  let rand = Math.floor(Math.random() * (9000 - 1))
-
-  console.log(package)
-
-  res.locals.package = package
-  res.locals.score = generateRating(package)
-  res.render('package_page')
+app.post("/search", async (req, res, next) => {
+  let result = await db.collection('top_thousand').findOne({'name':req.body.query})
+  if (result !== null){
+    res.locals.package = result
+    res.locals.score = generateRating(result)
+    res.render("package_page");
+  }
+  else{
+    res.locals.failed = true
+    res.render("index")
+  }
 });
 
 
+app.get("/lucky", async (req, res, next) => {
+  let packages = await db.collection('top_thousand').find().toArray()
+  let rand = Math.floor(Math.random() * (packages.length - 1))
+
+  let chosen = packages[rand]
+
+  res.locals.package = chosen
+  res.locals.score = generateRating(chosen)
+  res.render('package_page')
+});
 
 
 function generateRating(package){
@@ -113,17 +124,16 @@ function generateRating(package){
   - Dependents
   - Abandoned
   - GH Stars
-  - GH Watchers
-  - Code Coverage
+  - Maintainers / Contributors
   - Security Advisories
 
   Score: /100
   Point values:
   - Dependents: 30
   - Abandoned: 30
-  - GH Stars: 15
-  - GH Watchers: 15
-  - Code Coverage: 10
+  - GH Stars: 10
+  - Maintainers: 30
+
   - Security Advisories: -20
   */
 
@@ -144,6 +154,25 @@ function generateRating(package){
     points += 30
   }
 
+  if (package.GitHubStars > 500){
+    points += 5
+  }
+  if (package.GitHubStars > 10000){
+    points += 5
+  }
+
+  if (package.maintainers > 1){
+    points += 10
+  }
+  if (package.maintainers > 2){
+    points += 10
+  }
+  if (package.contributors > 1){
+    points += 5
+  }
+  if (package.contributors > 10){
+    points += 5
+  }
   
   return points
 }
