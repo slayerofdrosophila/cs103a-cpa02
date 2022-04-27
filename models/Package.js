@@ -12,14 +12,14 @@ var packageSchema = Schema( {
     GitHubWatchers: Number,
     abandoned: Boolean,
     codeCoveragePercent: Number,
-    Linters: Number,
+    linters: Number,
     dependents: Number,
-    NPMStars: Number,
     maintainers: Number,
     contributors: Number,
     securityAdvisories: Number,
     totalIssues: Number,
-    openIssues: Number
+    openIssues: Number,
+    num: Number
 } );
 
 module.exports = mongoose.model( 'Package', packageSchema );
