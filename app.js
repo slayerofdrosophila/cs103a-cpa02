@@ -31,7 +31,7 @@ const Package = require("./models/Package")
 // *********************************************************** //
 
 const mongoose = require( 'mongoose' );
-const mongodb_URI = 'mongodb+srv://user:T56BeKc3PRQztEoc@cpa02.hgtxt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+const mongodb_URI = process.env.MONGO_URI
 
 mongoose.connect( mongodb_URI, { useNewUrlParser: true, useUnifiedTopology: true } );
 // fix deprecation warnings
